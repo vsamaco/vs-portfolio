@@ -1,0 +1,6 @@
+// Base
+@use "./common/variables";
+
+body {
+  background-color: variables.$body-color;
+}
