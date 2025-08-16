@@ -1,4 +1,4 @@
-import PortofolioContainer from "@/containers/global/portfolio";
+import PortfolioContainer from "@/containers/global/portfolio";
 import IntroContainer from "@/containers/home/intro";
 import Layout from "@/layouts";
 import Footer from "@/layouts/footer";
@@ -22,7 +22,7 @@ export default function Home() {
           <IntroContainer />
           <main className="main-content">
             <h1>Hello Portfolio</h1>
-            <PortofolioContainer />
+            <PortfolioContainer />
             <Button>Button</Button>
           </main>
           <Footer />

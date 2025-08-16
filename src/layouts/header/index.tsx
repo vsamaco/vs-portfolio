@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { FC, useState } from "react";
 
 interface HeaderProps {
   classOption?: string;
 }
 
-const Header: React.FC<HeaderProps> = ({
+const Header: FC<HeaderProps> = ({
   classOption = "header-area header-default sticky-header",
 }) => {
   const [scroll, setScroll] = useState(0);

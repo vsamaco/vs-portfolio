@@ -1,4 +1,4 @@
-const Footer: React.FC = () => {
+const Footer = () => {
   return (
     <footer className="footer-area reveal-footer border-top-style">
       <div className="container-fluid">
