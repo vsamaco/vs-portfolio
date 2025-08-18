@@ -5,8 +5,6 @@ import Footer from "@/layouts/footer";
 import Header from "@/layouts/header";
 import Head from "next/head";
 
-import { Button } from "reactstrap";
-
 export default function Home() {
   return (
     <>
@@ -23,7 +21,6 @@ export default function Home() {
           <main className="main-content">
             <h1>Hello Portfolio</h1>
             <PortfolioContainer />
-            <Button>Button</Button>
           </main>
           <Footer />
         </div>
