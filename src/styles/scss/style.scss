@@ -1,6 +1,9 @@
 // Base
-@use "./common/variables";
+@import "common/variables";
+@import "common/mixins";
 
-body {
-  background-color: variables.$body-color;
-}
+// Common Styles
+@import "alexis/common";
+
+// Components
+@import "alexis/portfolio";
