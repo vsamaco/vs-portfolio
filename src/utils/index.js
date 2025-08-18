@@ -66,7 +66,7 @@ function slideUp(element, duration = 500) {
 }
 
 function slideDown(element, duration = 500) {
-  return new Promise(function () {
+  return new Promise(function (resolve) {
     element.style.removeProperty("display");
     let display = window.getComputedStyle(element).display;
 
@@ -93,6 +93,7 @@ function slideDown(element, duration = 500) {
       element.style.removeProperty("overflow");
       element.style.removeProperty("transition-duration");
       element.style.removeProperty("transition-property");
+      resolve(true);
     }, duration);
   });
 }

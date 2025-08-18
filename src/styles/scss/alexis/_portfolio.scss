@@ -248,7 +248,7 @@
     .content {
       margin-bottom: 80px;
       text-align: center;
-      @media #{$sm-device} {
+      @media #{$md-device} {
         margin-bottom: 60px;
       }
       @media #{$sm-device} {
