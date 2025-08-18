@@ -65,6 +65,8 @@ const PortfolioContainer = () => {
             dynamicEl={PortfolioData.map((photo) => ({
               src: photo.homeImage,
               thumb: photo.homeImage,
+              alt: photo.title,
+              subHtml: `<h4>${photo.title}</h4><p>${photo.excerpt}</p>`,
             }))}
           />
         </div>

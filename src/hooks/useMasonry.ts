@@ -29,7 +29,7 @@ const useMasonry = (
 
       // This for Images
       const masonryList = document.querySelector(masonryListWrap);
-      if (!masonryList) return;
+      if (!(masonryList instanceof HTMLElement)) return;
 
       imagesloaded(masonryList, () => {
         const projectItems = masonryList.querySelectorAll(masonryGrid);
@@ -43,7 +43,7 @@ const useMasonry = (
           isotopeRef.current.destroy();
         }
 
-        isotopeRef.current = new Isotope(masonryList, {
+        isotopeRef.current = new Isotope(masonryList as HTMLElement, {
           itemSelector: masonryGrid,
         });
 
