@@ -1,12 +1,6 @@
+import { Portfolio } from "@/utils/types";
 import Link from "next/link";
 import { FC } from "react";
-
-interface Portfolio {
-  id: number;
-  homeImage: string;
-  title: string;
-  excerpt: string;
-}
 
 interface PortfolioItemProps {
   portfolio: Portfolio;

@@ -1,24 +1,18 @@
 import { useEffect, useRef, useState } from "react";
 import { flatDeep } from "@/utils";
-
-interface PortfolioItem {
-  id: number;
-  categories: string[];
-  // Add any other properties your portfolio items have
-  // e.g., title: string; homeImage: string; etc.
-}
+import { Portfolio } from "@/utils/types";
 
 type FlatDeepResult = string[];
 
 const useMasonry = (
-  PortfolioData: PortfolioItem[],
+  PortfolioData: Portfolio[],
   masonryListWrap: string,
   masonryGrid: string,
   btnWrap: string,
   btn: string
 ) => {
   const [categories, setCategories] = useState<string[]>([]);
-  const isotopeRef = useRef<any | null>(null);
+  const isotopeRef = useRef<Isotope | null>(null);
 
   useEffect(() => {
     const initMasonry = async () => {
@@ -57,20 +51,20 @@ const useMasonry = (
         if (!filterWrap) return;
 
         const filterItems = document.querySelectorAll<HTMLElement>(btn);
-        debugger;
         if (!filterItems) return;
 
         filterItems.forEach((filterItem) => {
-          filterItem.addEventListener("click", (e: PointerEvent) => {
+          filterItem.addEventListener("click", (e) => {
+            const target = e.currentTarget as HTMLElement;
             const filterCate = filterItem.dataset.filter;
 
             filterWrap
               .querySelector(".is-checked")
               ?.classList.remove("is-checked");
-            e.target.classList.add("is-checked");
+
+            target.classList.add("is-checked");
 
             if (isotopeRef.current) {
-              console.log(`isotope filter: ${filterCate}`);
               isotopeRef.current.arrange({ filter: filterCate });
             }
           });

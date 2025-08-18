@@ -1,7 +1,7 @@
 import PortfolioData from "@/data/portfolio.json";
 import useMasonry from "@/hooks/useMasonry";
 import LightGalleryComponent from "lightgallery/react";
-import LightGallery from "lightgallery/react";
+import type { LightGallery as LightGalleryInstance } from "lightgallery/lightgallery";
 import lgThumbnail from "lightgallery/plugins/thumbnail";
 import lgZoom from "lightgallery/plugins/zoom";
 import { useRef } from "react";
@@ -17,7 +17,7 @@ import "lightgallery/css/lg-share.css";
 import "lightgallery/css/lg-rotate.css";
 
 const PortfolioContainer = () => {
-  const lightboxRef = useRef<typeof LightGallery | null>(null);
+  const lightboxRef = useRef<LightGalleryInstance | null>(null);
 
   const { categories } = useMasonry(
     PortfolioData,
