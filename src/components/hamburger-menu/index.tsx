@@ -8,32 +8,6 @@ interface HamburgerMenuProps {
 }
 
 const HamburgerMenu: FC<HamburgerMenuProps> = ({ show, onClose }) => {
-  const onClickHandler = (e) => {
-    const target = e.currentTarget;
-    const parentEl = target.parentElement;
-    if (
-      parentEl?.classList.contains("menu-toggle") ||
-      target.classList.contains("menu-toggle")
-    ) {
-      const element = target.classList.contains("icon") ? parentEl : target;
-      const parent = getClosest(element, "li");
-      const childNodes = parent.childNodes;
-      const parentSiblings = getSiblings(parent);
-      parentSiblings.forEach((sibling) => {
-        const sibChildNodes = sibling.childNodes;
-        sibChildNodes.forEach((child) => {
-          if (child.nodeName === "UL") {
-            slideUp(child, 1000);
-          }
-        });
-      });
-      childNodes.forEach((child) => {
-        if (child.nodeName === "UL") {
-          slideToggle(child, 1000);
-        }
-      });
-    }
-  };
   return (
     <aside className={`off-canvas-wrapper ${show ? "active" : ""}`}>
       <div className="off-canvas-inner">

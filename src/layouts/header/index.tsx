@@ -1,4 +1,5 @@
 import HamburgerMenu from "@/components/hamburger-menu";
+import HeaderSearch from "@/components/header-search";
 import Logo from "@/components/logo";
 import { FC, useEffect, useState } from "react";
 
@@ -26,7 +27,7 @@ const Header: FC<HeaderProps> = ({
     };
   }, []);
 
-  const handleScroll = ({}) => {
+  const handleScroll = () => {
     setScroll(window.scrollY);
   };
   return (
@@ -53,6 +54,9 @@ const Header: FC<HeaderProps> = ({
               <div className="header-logo-area">
                 <Logo image={`/img/logo.png`} />
               </div>
+            </div>
+            <div className="col-auto">
+              <HeaderSearch onClick={() => {}} />
             </div>
           </div>
         </div>
