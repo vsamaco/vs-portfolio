@@ -1,9 +1,17 @@
 // Base
 @import "common/variables";
 @import "common/mixins";
+@import "common/rfs";
+
+// Typography
+@import "common/typography";
 
 // Common Styles
 @import "alexis/common";
+@import "alexis/navbar";
+
+// Header
+@import "header/header";
 
 // Components
 @import "alexis/portfolio";
