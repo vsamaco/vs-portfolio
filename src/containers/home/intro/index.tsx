@@ -1,8 +1,6 @@
 import React from "react";
 import { Pagination } from "swiper/modules";
-import "swiper/scss/navigation";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
 import Intro from "@/components/intro/index";
 import HomeData from "@/data/home.json";
 
@@ -25,8 +23,8 @@ const IntroContainer = () => {
         {HomeData[0].slider &&
           HomeData[0].slider.map((single, key) => {
             return (
-              <SwiperSlide key={key}>
-                <Intro data={single} key={key} />
+              <SwiperSlide key={single.id}>
+                <Intro data={single} key={single.id} />
               </SwiperSlide>
             );
           })}

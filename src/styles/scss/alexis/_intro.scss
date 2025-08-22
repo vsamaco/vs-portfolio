@@ -96,16 +96,16 @@
     margin-bottom: 30px;
     // Responsive
     @media #{$lg-device} {
-      font-size: 44px;
+      font-size: 30px;
     }
     @media #{$md-device} {
-      font-size: 40px;
+      font-size: 25px;
     }
     @media #{$xs-device} {
-      font-size: 36px;
+      font-size: 20px;
     }
     @media #{$xxs-device} {
-      font-size: 26px;
+      font-size: 18px;
       margin-bottom: 20px;
     }
   }
