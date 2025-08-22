@@ -57,10 +57,14 @@
 
 .intro-content {
   position: absolute;
-  top: 80%;
+  bottom: 10%;
   right: 0;
   padding: 0 40px;
   text-align: center;
+  transform: translateY(0);
+
+  @media #{$sm-device} {
+  }
   & .sub-title {
     display: block;
     font-size: 24px;
