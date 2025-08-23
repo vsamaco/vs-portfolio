@@ -17,8 +17,7 @@ const Intro: FC<IntroProps> = ({ data }) => {
     <div
       className="intro-section section overlay"
       style={{
-        background: `url(${data.backgroundImage}) no-repeat center`,
-        backgroundSize: "cover",
+        background: `rgba(0,0,0,0.1) url(${data.backgroundImage}) no-repeat center/cover`,
       }}
     >
       <div className="container">
@@ -29,7 +28,9 @@ const Intro: FC<IntroProps> = ({ data }) => {
             </div> */}
             <div className="intro-content">
               {/* <span className="sub-title">{data.subTitle}</span> */}
-              <h2 className="title">{data.title}</h2>
+              <Link href="/">
+                <h2 className="title">{data.title}</h2>
+              </Link>
               {/* <div className="desc">
                 <p>{data.desc}</p>
               </div> */}
