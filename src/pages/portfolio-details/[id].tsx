@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React from "react";
 // import ScrollToTop from "../components/scroll-to-top";
 // import SEO from "../components/seo";
 import PortfolioDetailsContainer from "@/containers/portfolio-details";
@@ -8,15 +8,19 @@ import Header from "@/layouts/header/index";
 import Layout from "@/layouts/index";
 import { Portfolio } from "@/utils/types";
 import { useRouter } from "next/router";
+import { notFound } from "next/navigation";
 
 const PortfolioDetails = () => {
   const router = useRouter();
   const { id } = router.query;
-  if (!id) return null;
 
   const projectId = parseInt(id as string, 10);
   const typedData = PortfolioData as Portfolio[];
-  const data = typedData.filter((project) => project.id === projectId);
+  const project = typedData.find((project) => project.id === projectId);
+
+  if (!project) {
+    notFound();
+  }
 
   const projectIndex = typedData.findIndex((p) => p.id === projectId);
   const total = typedData.length;
@@ -31,7 +35,7 @@ const PortfolioDetails = () => {
           <Header classOption="hb-border" />
           <div className="main-content">
             <PortfolioDetailsContainer
-              data={data[0]}
+              data={project}
               nextProject={nextProject}
               prevProject={prevProject}
             />

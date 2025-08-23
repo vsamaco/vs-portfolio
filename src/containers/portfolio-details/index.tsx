@@ -103,9 +103,7 @@ const PortfolioDetailsContainer: FC<PortfolioDetailsContainerProps> = ({
                     />
                   );
                 })}
-                <Link href={process.env.PUBLIC_URL + data.pageUrl.link}>
-                  {data.pageUrl.text}
-                </Link>
+                <Link href={data.pageUrl.link}>{data.pageUrl.text}</Link>
               </div>
               <div
                 className="thumb section-padding-bottom"
@@ -124,41 +122,6 @@ const PortfolioDetailsContainer: FC<PortfolioDetailsContainerProps> = ({
       </div>
 
       <div className="container">
-        <div className="row">
-          <div className="col-lg-12" data-aos="fade-up">
-            <div className="social-icons">
-              <span>Share:</span>
-              <a
-                href="https://twitter.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i className="social_twitter"></i>
-              </a>
-              <a
-                href="https://facebook.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i className="icofont-facebook"></i>
-              </a>
-              <a
-                href="https://myaccount.google.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i className="icofont-google-plus"></i>
-              </a>
-              <a
-                href="https://www.instagram.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i className="icofont-instagram"></i>
-              </a>
-            </div>
-          </div>
-        </div>
         <div className="row">
           <div className="col-lg-12" data-aos="fade-up" data-aos-delay="600">
             <div className="portfolio-navigation">
