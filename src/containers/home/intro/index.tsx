@@ -1,5 +1,36 @@
+import React from "react";
+import { Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import Intro from "@/components/intro/index";
+import HomeData from "@/data/home.json";
+
 const IntroContainer = () => {
-  return <div className="intro-slider-wrap">INntroContainer</div>;
+  const swiperOption = {
+    modules: [Pagination],
+    loop: true,
+    speed: 750,
+    spaceBetween: 0,
+    slidesPerView: 1,
+    pagination: { clickable: true },
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+  };
+  return (
+    <div className="intro-slider-wrap">
+      <Swiper effect="fade" className="intro-slider" {...swiperOption}>
+        {HomeData[0].slider &&
+          HomeData[0].slider.map((single, key) => {
+            return (
+              <SwiperSlide key={single.id}>
+                <Intro data={single} key={single.id} />
+              </SwiperSlide>
+            );
+          })}
+      </Swiper>
+    </div>
+  );
 };
 
 export default IntroContainer;

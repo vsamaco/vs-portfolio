@@ -1,0 +1,41 @@
+[
+  {
+    "slider": [
+      {
+        "id": 1,
+        "backgroundImage": "/img/hero-slider/VS-4161.jpg",
+        "title": "League of Legends Worlds",
+        "subTitle": "inspire 2026",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "buttonText": "Explore now"
+      },
+      {
+        "id": 2,
+        "backgroundImage": "/img/hero-slider/VS-2576.jpg",
+        "title": "Hero Slide 2",
+        "subTitle": "inspire 2026",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "buttonText": "Explore now"
+      },
+      {
+        "id": 3,
+        "backgroundImage": "/img/hero-slider/VS-2711.jpg",
+        "title": "Hero Slide 3",
+        "subTitle": "inspire 2026",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "buttonText": "Explore now"
+      },
+      {
+        "id": 4,
+        "backgroundImage": "/img/hero-slider/hero1.jpg",
+        "title": "Hero Slide 4",
+        "subTitle": "inspire 2026",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "buttonText": "Explore now"
+      }
+    ]
+  },
+  {
+    "qute": "Alexis Photography Studio based in Portland, <br /> Oregon. I specialises in shooting liquids and my colourful liquid work, titled “Biford”, has become very well <br /> known and collectable."
+  }
+]
