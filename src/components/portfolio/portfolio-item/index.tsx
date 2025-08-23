@@ -18,9 +18,7 @@ const PortfolioItem: FC<PortfolioItemProps> = ({ portfolio }) => {
       </div>
       <div className="content">
         <h3 className="title">
-          <Link href={`/portfolio-details/${portfolio.id}`}>
-            {portfolio.title}
-          </Link>
+          <Link href={`/portfolio/${portfolio.id}`}>{portfolio.title}</Link>
         </h3>
         <p className="desc">{portfolio.excerpt}</p>
       </div>

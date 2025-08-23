@@ -126,13 +126,13 @@ const PortfolioDetailsContainer: FC<PortfolioDetailsContainerProps> = ({
           <div className="col-lg-12" data-aos="fade-up" data-aos-delay="600">
             <div className="portfolio-navigation">
               <div className="prev">
-                <Link href={`/portfolio-details/${prevProject["id"]}`}>
+                <Link href={`/portfolio/${prevProject["id"]}`}>
                   <i className="arrow_carrot-left"></i> Previous
                 </Link>
                 {prevProject["title"]}
               </div>
               <div className="next">
-                <Link href={`/portfolio-details/${nextProject["id"]}`}>
+                <Link href={`/portfolio/${nextProject["id"]}`}>
                   Next <i className="arrow_carrot-right"></i>
                 </Link>
                 {nextProject["title"]}
