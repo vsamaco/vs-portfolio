@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React from "react";
 // import ScrollToTop from "../components/scroll-to-top";
 // import SEO from "../components/seo";
 import PortfolioDetailsContainer from "@/containers/portfolio-details";
@@ -7,7 +7,12 @@ import Footer from "@/layouts/footer";
 import Header from "@/layouts/header/index";
 import Layout from "@/layouts/index";
 import { PortfolioItem } from "@/utils/types";
-import { GetStaticPaths, GetStaticProps } from "next";
+import type {
+  GetStaticPaths,
+  GetStaticProps,
+  InferGetStaticPropsType,
+} from "next";
+import { ParsedUrlQuery } from "querystring";
 
 interface PortfolioDetailsParams {
   project: PortfolioItem;
@@ -15,33 +20,14 @@ interface PortfolioDetailsParams {
   nextProject: PortfolioItem;
 }
 
-const PortfolioDetails: FC<PortfolioDetailsParams> = ({
-  project,
-  prevProject,
-  nextProject,
-}) => {
-  return (
-    <>
-      <Layout>
-        {/* <SEO title="Alexis || Portfolio Details" /> */}
-        <div className="wrapper home-default-wrapper">
-          <Header classOption="hb-border" />
-          <div className="main-content">
-            <PortfolioDetailsContainer
-              data={project}
-              nextProject={nextProject}
-              prevProject={prevProject}
-            />
-          </div>
-          <Footer />
-          {/* <ScrollToTop /> */}
-        </div>
-      </Layout>
-    </>
-  );
-};
+interface PortfolioDetailsQueryParams extends ParsedUrlQuery {
+  id: string;
+}
 
-export const getStaticProps: GetStaticProps = ({ params }) => {
+export const getStaticProps: GetStaticProps<
+  PortfolioDetailsParams,
+  PortfolioDetailsQueryParams
+> = ({ params }) => {
   const id = parseInt(params?.id as string, 10);
   const data = PortfolioData as PortfolioItem[];
   const projectIndex = data.findIndex((p) => p.id === id);
@@ -76,6 +62,32 @@ export const getStaticPaths: GetStaticPaths = () => {
     paths,
     fallback: false,
   };
+};
+
+const PortfolioDetails = ({
+  project,
+  prevProject,
+  nextProject,
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
+  return (
+    <>
+      <Layout>
+        {/* <SEO title="Alexis || Portfolio Details" /> */}
+        <div className="wrapper home-default-wrapper">
+          <Header classOption="hb-border" />
+          <div className="main-content">
+            <PortfolioDetailsContainer
+              data={project}
+              nextProject={nextProject}
+              prevProject={prevProject}
+            />
+          </div>
+          <Footer />
+          {/* <ScrollToTop /> */}
+        </div>
+      </Layout>
+    </>
+  );
 };
 
 export default PortfolioDetails;
