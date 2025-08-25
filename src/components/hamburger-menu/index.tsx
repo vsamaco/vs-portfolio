@@ -25,17 +25,15 @@ const HamburgerMenu: FC<HamburgerMenuProps> = ({ show, onClose }) => {
             <div className="asside-navigation-area">
               <ul className="asside-menu">
                 <li className="item">
-                  <Link href={process.env.PUBLIC_URL + "/"}>Home</Link>
+                  <Link href={"/"}>Home</Link>
                 </li>
                 <li>
-                  <Link href={process.env.PUBLIC_URL + "/portfolio"}>
+                  <Link href={"/portfolio"}>
                     <span>Portfolio</span>
                   </Link>
                 </li>
                 <li>
-                  <Link href={process.env.PUBLIC_URL + "/contact"}>
-                    Contact
-                  </Link>
+                  <Link href={"/contact"}>Contact</Link>
                 </li>
               </ul>
             </div>

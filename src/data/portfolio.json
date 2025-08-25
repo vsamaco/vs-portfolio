@@ -3,9 +3,9 @@
     "id": 1,
     "type": "image",
     "homeImage": "/img/portfolio/_MG_1196.jpg",
-    "title": "Tokyo",
+    "title": "Akihabara",
     "excerpt": "Mango Fashion Lookbook Campaign",
-    "categories": ["travel", "new added"],
+    "categories": ["travel"],
     "client": "Archo Architecture <br />Bureau, SG",
     "date": "September 25th <br />2020",
     "team": "Nindia H. - Editor <br />Kate E. - Photographer",
@@ -18,13 +18,7 @@
       "text": "https://yourwebsite.com",
       "link": "/"
     },
-    "gallery": {
-      "imageOne": "./img/portfolio/s1.jpg",
-      "imageTwo": "./img/portfolio/s2.jpg",
-      "imageThree": "./img/portfolio/s3.jpg",
-      "imageFour": "./img/portfolio/sv1.jpg",
-      "imageFive": "./img/portfolio/s4.jpg"
-    }
+    "gallery": ["/img/portfolio/_MG_1196.jpg"]
   },
   {
     "id": 2,
@@ -45,13 +39,7 @@
       "text": "https://yourwebsite.com",
       "link": "/"
     },
-    "gallery": {
-      "imageOne": "./img/portfolio/s1.jpg",
-      "imageTwo": "./img/portfolio/s2.jpg",
-      "imageThree": "./img/portfolio/s3.jpg",
-      "imageFour": "./img/portfolio/sv1.jpg",
-      "imageFive": "./img/portfolio/s4.jpg"
-    }
+    "gallery": ["/img/portfolio/_MG_2576edit-2.jpg"]
   },
   {
     "id": 3,
@@ -72,13 +60,7 @@
       "text": "https://yourwebsite.com",
       "link": "/"
     },
-    "gallery": {
-      "imageOne": "./img/portfolio/s1.jpg",
-      "imageTwo": "./img/portfolio/s2.jpg",
-      "imageThree": "./img/portfolio/s3.jpg",
-      "imageFour": "./img/portfolio/sv1.jpg",
-      "imageFive": "./img/portfolio/s4.jpg"
-    }
+    "gallery": ["/img/portfolio/_MG_0258.jpg"]
   },
   {
     "id": 4,
@@ -99,12 +81,6 @@
       "text": "https://yourwebsite.com",
       "link": "/"
     },
-    "gallery": {
-      "imageOne": "./img/portfolio/s1.jpg",
-      "imageTwo": "./img/portfolio/s2.jpg",
-      "imageThree": "./img/portfolio/s3.jpg",
-      "imageFour": "./img/portfolio/sv1.jpg",
-      "imageFive": "./img/portfolio/s4.jpg"
-    }
+    "gallery": ["/img/portfolio/_MG_2755.jpg"]
   }
 ]
