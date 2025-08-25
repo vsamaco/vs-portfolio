@@ -1,9 +1,9 @@
-import { Portfolio } from "@/utils/types";
+import { PortfolioItem } from "@/utils/types";
 import Link from "next/link";
 import { FC } from "react";
 
 interface PortfolioItemProps {
-  portfolio: Portfolio;
+  portfolio: PortfolioItem;
 }
 
 // TODO: Use Nextjs Image and specify photo dimensions

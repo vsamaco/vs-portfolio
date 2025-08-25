@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import { flatDeep } from "@/utils";
-import { Portfolio } from "@/utils/types";
+import { PortfolioItem } from "@/utils/types";
 
 type FlatDeepResult = string[];
 
 const useMasonry = (
-  PortfolioData: Portfolio[],
+  PortfolioData: PortfolioItem[],
   masonryListWrap: string,
   masonryGrid: string,
   btnWrap: string,

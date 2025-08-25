@@ -1,11 +1,11 @@
-import { Portfolio } from "@/utils/types";
+import { PortfolioItem } from "@/utils/types";
 import Link from "next/link";
 import { FC } from "react";
 
 interface PortfolioDetailsContainerProps {
-  data: Portfolio;
-  prevProject: Portfolio;
-  nextProject: Portfolio;
+  data: PortfolioItem;
+  prevProject: PortfolioItem;
+  nextProject: PortfolioItem;
 }
 
 const PortfolioDetailsContainer: FC<PortfolioDetailsContainerProps> = ({
