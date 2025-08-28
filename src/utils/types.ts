@@ -4,12 +4,9 @@ export interface PortfolioItem {
   title: string;
   excerpt: string;
   categories: string[];
-  client: string;
   date: string;
-  team: string;
-  services: string;
   body: string[];
-  pageUrl: {
+  pageUrl?: {
     text: string;
     link: string;
   };

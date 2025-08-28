@@ -31,80 +31,26 @@ const PortfolioDetailsContainer: FC<PortfolioDetailsContainerProps> = ({
               <div className="content" data-aos="fade-up">
                 <p className="category">{cate}</p>
                 <h3 className="title">{data.title}</h3>
+                <p className="date">{data.date}</p>
               </div>
-              <div className="portfolio-info">
-                <div className="row">
-                  {/* <div
-                    className="col-sm-6 col-md-3 col-lg-3"
-                    data-aos="fade-up"
-                  >
-                    <div className="info-item">
-                      <span>Client</span>
-                      <p
+              {data.body && (
+                <div className="portfolio-content" data-aos="fade-up">
+                  {data.body.map((value, i) => {
+                    return (
+                      <div
+                        key={i}
+                        className="content-wrap"
                         dangerouslySetInnerHTML={{
-                          __html: data.client,
+                          __html: value,
                         }}
                       />
-                    </div>
-                  </div> */}
-                  <div
-                    className="col-sm-6 col-md-3 col-lg-3"
-                    data-aos="fade-up"
-                    data-aos-delay="300"
-                  >
-                    <div className="info-item">
-                      <span>Date</span>
-                      <p
-                        dangerouslySetInnerHTML={{
-                          __html: data.date,
-                        }}
-                      />
-                    </div>
-                  </div>
-                  {/* <div
-                    className="col-sm-6 col-md-3 col-lg-3"
-                    data-aos="fade-up"
-                    data-aos-delay="600"
-                  >
-                    <div className="info-item">
-                      <span>Team</span>
-                      <p
-                        dangerouslySetInnerHTML={{
-                          __html: data.team,
-                        }}
-                      />
-                    </div>
-                  </div> */}
-                  {/* <div
-                    className="col-sm-6 col-md-3 col-lg-3"
-                    data-aos="fade-up"
-                    data-aos-delay="900"
-                  >
-                    <div className="info-item style-two">
-                      <span>Services</span>
-                      <p
-                        dangerouslySetInnerHTML={{
-                          __html: data.services,
-                        }}
-                      />
-                    </div>
-                  </div> */}
+                    );
+                  })}
+                  {data.pageUrl && (
+                    <Link href={data.pageUrl.link}>{data.pageUrl.text}</Link>
+                  )}
                 </div>
-              </div>
-              <div className="portfolio-content" data-aos="fade-up">
-                {data.body.map((value, i) => {
-                  return (
-                    <div
-                      key={i}
-                      className="content-wrap"
-                      dangerouslySetInnerHTML={{
-                        __html: value,
-                      }}
-                    />
-                  );
-                })}
-                <Link href={data.pageUrl.link}>{data.pageUrl.text}</Link>
-              </div>
+              )}
               <div
                 className="thumb section-padding-bottom"
                 data-aos="fade-up"
@@ -129,13 +75,13 @@ const PortfolioDetailsContainer: FC<PortfolioDetailsContainerProps> = ({
                 <Link href={`/portfolio/${prevProject.id}`}>
                   <i className="arrow_carrot-left"></i> Previous
                 </Link>
-                {prevProject["title"]}
+                {prevProject.title}
               </div>
               <div className="next">
                 <Link href={`/portfolio/${nextProject.id}`}>
                   Next <i className="arrow_carrot-right"></i>
                 </Link>
-                {nextProject["title"]}
+                {nextProject.title}
               </div>
             </div>
           </div>
