@@ -61,12 +61,13 @@ const PortfolioContainer = () => {
             }}
             speed={500}
             plugins={[lgThumbnail, lgZoom]}
+            download={false}
             dynamic
             dynamicEl={PortfolioData.map((photo) => ({
               src: photo.homeImage,
               thumb: photo.homeImage,
               alt: photo.title,
-              subHtml: `<h4>${photo.title}</h4><p>${photo.excerpt}</p>`,
+              subHtml: `<p>${photo.title}</p>`,
             }))}
           />
         </div>

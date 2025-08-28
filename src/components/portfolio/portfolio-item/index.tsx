@@ -20,7 +20,6 @@ const PortfolioItem: FC<PortfolioItemProps> = ({ portfolio }) => {
         <h3 className="title">
           <Link href={`/portfolio/${portfolio.id}`}>{portfolio.title}</Link>
         </h3>
-        <p className="desc">{portfolio.excerpt}</p>
       </div>
     </div>
   );
