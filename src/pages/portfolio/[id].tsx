@@ -13,6 +13,7 @@ import type {
   InferGetStaticPropsType,
 } from "next";
 import { ParsedUrlQuery } from "querystring";
+import ScrollToTop from "@/components/scroll-to-top";
 
 interface PortfolioDetailsParams {
   project: PortfolioItem;
@@ -83,7 +84,7 @@ const PortfolioDetails = ({
             />
           </div>
           <Footer />
-          {/* <ScrollToTop /> */}
+          <ScrollToTop />
         </div>
       </Layout>
     </>
