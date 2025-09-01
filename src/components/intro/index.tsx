@@ -28,7 +28,7 @@ const Intro: FC<IntroProps> = ({ data }) => {
             </div> */}
             <div className="intro-content">
               {/* <span className="sub-title">{data.subTitle}</span> */}
-              <Link href="/">
+              <Link href={`/portfolio/${data.id}`}>
                 <h2 className="title">{data.title}</h2>
               </Link>
               {/* <div className="desc">

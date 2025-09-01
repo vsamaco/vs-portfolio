@@ -254,7 +254,8 @@
       @media #{$sm-device} {
         margin-bottom: 40px;
       }
-      .category {
+      .category,
+      .date {
         color: $black-999;
         font-size: 18px;
         letter-spacing: 2px;
@@ -276,6 +277,7 @@
         font-size: 60px;
         line-height: 1;
         letter-spacing: -0.25px;
+        margin-bottom: 20px;
         @media #{$lg-device} {
           font-size: 48px;
         }
