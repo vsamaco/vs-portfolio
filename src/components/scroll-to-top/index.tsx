@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from "react";
+import React, { FC, useCallback, useEffect, useRef, useState } from "react";
 
 type ScrollToTopProps = React.PropsWithChildren<
   React.ButtonHTMLAttributes<HTMLButtonElement>
@@ -10,30 +10,32 @@ const ScrollToTop: FC<ScrollToTopProps> = (props) => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const lastYRef = useRef(0);
+  const tickingRef = useRef(false);
+
+  const handleScroll = useCallback(() => {
+    const y = window.scrollY || window.pageYOffset;
+    const shouldShow = y >= 200 && y < lastYRef.current;
+    setStick(shouldShow);
+    lastYRef.current = y;
+  }, []);
+
   useEffect(() => {
-    let position = window.pageYOffset;
-
-    const scrollHandler = () => {
-      const scrollPos = window.pageYOffset;
-      if (scrollPos < 200) {
-        setStick(false);
-      } else if (scrollPos < position) {
-        setStick(true);
-      } else {
-        setStick(false);
-      }
-      position = scrollPos;
-    };
-
-    window.addEventListener("scroll", function () {
-      scrollHandler();
-    });
-    return () => {
-      window.removeEventListener("scroll", function () {
-        scrollHandler();
+    lastYRef.current = window.scrollY || window.pageYOffset;
+    const onScroll = () => {
+      if (tickingRef.current) return;
+      tickingRef.current = true;
+      requestAnimationFrame(() => {
+        handleScroll();
+        tickingRef.current = false;
       });
     };
-  }, [stick]);
+    window.addEventListener("scroll", onScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+    };
+  }, [handleScroll]);
 
   return (
     <button
