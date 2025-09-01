@@ -1,3 +1,4 @@
+import ScrollToTop from "@/components/scroll-to-top";
 import PortfolioContainer from "@/containers/global/portfolio";
 import IntroContainer from "@/containers/home/intro";
 import Layout from "@/layouts";
@@ -23,6 +24,7 @@ export default function Home() {
             <PortfolioContainer />
           </main>
           <Footer />
+          <ScrollToTop />
         </div>
       </Layout>
     </>
